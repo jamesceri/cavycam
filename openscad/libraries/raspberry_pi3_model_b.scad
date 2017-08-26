@@ -41,7 +41,7 @@ module sdcard_connector() {
 }
 
 
-module pcb() {
+module rp3b_pcb() {
     color("green") hull() {
         translate([3,3,0]) cube([85-3 , 56-3, 1.6]);
         translate([3, 3, 0]) cylinder(r=3, h=1.6);
@@ -57,16 +57,16 @@ module pcb() {
     translate([3.5 + 58, 3.5, -0.2]) cylinder(r=3, h=2);
 }
 
-module pcb_mounting_holes() {
+module rp3b_mounting_holes() {
     translate([3.5, 3.5, -1.6]) cylinder(r=2.75 / 2, h=4.8);
     translate([3.5, 3.5+49, -1.6]) cylinder(r=2.75 / 2, h=4.8);
     translate([3.5 + 58, 3.5+49, -1.6]) cylinder(r=2.75 / 2, h=4.8);
     translate([3.5 + 58, 3.5, -1.6]) cylinder(r=2.75 / 2, h=4.8);
 }
 
-module board() {
+module rp3b_board() {
     $fn = 100;
-    difference() { pcb(); pcb_mounting_holes(); }
+    difference() { rp3b_pcb(); rp3b_mounting_holes(); }
     translate([87, 17.5, 1.6]) rotate(180) ethernet_connector();
     translate([87, 36, 1.6]) rotate(180) usb_connector();
     translate([87, 54, 1.6]) rotate(180) usb_connector();

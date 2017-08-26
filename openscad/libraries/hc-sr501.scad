@@ -45,7 +45,7 @@ module hc_sr501_capacitor() {
     }
 }
 
-module hc_sr501() {
+module hc_sr501_module() {
     hc_sr501_pcb();
     translate([5, 0.5, 1]) hc_sr501_pir();
  

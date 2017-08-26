@@ -1,4 +1,4 @@
-include <libraries/brass_spacer.scad>
+include <../libraries/brass_spacer.scad>
 
 render_thread = 0;
 
