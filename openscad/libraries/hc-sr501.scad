@@ -19,7 +19,7 @@ module hc_sr501_pcb() {
 }
 
 module hc_sr501_pir() {
-    $fn = 200;
+    $fn = 20;
     color([0.8,0.8,0.8,0.98]) {
         cube([23,23,3]);
         translate([23/2,23/2,3]) 
@@ -35,7 +35,7 @@ module hc_sr501_pir() {
 }
 
 module hc_sr501_capacitor() {
-    $fn = 100;
+    $fn = 20;
     color("MidnightBlue") {
         translate([2,2,0]) cylinder(r=2, h=8);
     }

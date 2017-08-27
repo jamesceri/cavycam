@@ -65,7 +65,7 @@ module rp3b_mounting_holes() {
 }
 
 module rp3b_board() {
-    $fn = 100;
+    $fn = 25;
     difference() { rp3b_pcb(); rp3b_mounting_holes(); }
     translate([87, 17.5, 1.6]) rotate(180) ethernet_connector();
     translate([87, 36, 1.6]) rotate(180) usb_connector();
