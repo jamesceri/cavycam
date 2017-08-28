@@ -2,6 +2,7 @@ include <libraries/raspberry_pi3_model_b.scad>
 include <libraries/hc-sr501.scad>
 include <libraries/brass_spacer.scad>
 include <libraries/breadboard_63.scad>
+include <libraries/elegoo_power_board.scad>
 
 perspex_only = 0;
 show_breadboard = 1;
@@ -54,5 +55,8 @@ if(perspex_only == 1) {
     perspex();
     if (show_rp3b == 1) {rp3b();}
     if (show_hc_sr501 == 1) {hc_sr501();}
-    if (show_breadboard == 1) {breadboard();}
+    if (show_breadboard == 1) {
+        breadboard();
+        translate([97.5,0.3,13.8]) elegoo_power_board();
+    }       
 }
