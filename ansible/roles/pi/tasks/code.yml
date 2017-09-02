@@ -1,0 +1,22 @@
+---
+- name: Create workspace
+  file: path="/home/pi/workspace" state=directory mode=0755 group=pi owner=pi
+  tags: code
+
+- name: Create directory for blinker
+  file: path="/home/pi/workspace/blinker" state=directory mode=0755 group=pi owner=pi
+  tags: code
+
+- name: Copy blinker
+  copy: src='{{files_path}}/code/blinker/{{ item }}' dest='/home/pi/workspace/blinker/' owner=pi group=pi mode=0644
+  with_items:
+    - blinker.c
+    - Makefile
+  tags: code
+
+- name: Build blinker
+  shell: cd /home/pi/workspace/blinker ; make
+  tags: code
+
+
+  

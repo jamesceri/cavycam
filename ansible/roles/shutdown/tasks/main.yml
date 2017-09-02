@@ -1,0 +1,12 @@
+---
+- set_fact:
+    real_ansible_host: "{{ ansible_host }}"
+
+- name: 'Shutdown'
+  shell: shutdown now -hP
+  async: 1
+  poll: 0
+  ignore_errors: true
+
+
+

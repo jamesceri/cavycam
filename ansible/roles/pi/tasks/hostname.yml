@@ -1,0 +1,21 @@
+---
+
+- name: Remove original host entry form hosts
+  become: true
+  lineinfile: dest=/etc/hosts state=absent regexp=".*raspberrypi"
+  tags: hosts
+
+- name: Add host entry to hosts
+  become: true
+  lineinfile: dest=/etc/hosts line='127.0.0.1       {{ inventory_hostname }}'
+  tags: hosts
+
+- name: Remove original host entry form hostname
+  become: true
+  lineinfile: dest=/etc/hostname state=absent regexp=".*raspberrypi"
+  tags: hosts
+
+- name: Add host entry to hostname
+  become: true
+  lineinfile: dest=/etc/hostname state=present line='{{ inventory_hostname }}'
+  tags: hosts

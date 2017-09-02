@@ -1,0 +1,23 @@
+---
+#- name: Add time server to config
+#  lineinfile: regexp='server 0\.debian' dest='/etc/ntp.conf' line='server ntp.bob.com' owner='root' group='root'
+#  become: true
+#  tags: ['update_ntp']
+#  register: ntp_config
+
+- name: Stop NTP service
+  service: name='ntp' state='stopped'
+  become: true
+  #when: ntp_config.changed
+  tags: ['update_ntp']
+
+- name: Sync time
+  shell: ntpd -gq
+  become: true
+  #when: ntp_config.changed
+  tags: ['update_ntp']
+
+- name: Start NTP service
+  service: name='ntp' state='started'
+  #when: ntp_config.changed
+  tags: ['update_ntp']

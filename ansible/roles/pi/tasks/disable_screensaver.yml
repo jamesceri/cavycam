@@ -1,0 +1,7 @@
+---
+- name: Disable screensaver
+  become: yes
+  copy: src='{{ generic_templates_path }}/pi_screens_lightdm_conf'
+        dest='/etc/lightdm/lightdm.conf' owner=root group=root mode=644
+  notify: lightdm
+  tags: disable_screensaver

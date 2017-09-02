@@ -1,0 +1,10 @@
+---
+- name: Create x11vnc dir
+  file: dest=/home/pi/.vnc group=pi owner=pi mode=0700 state=directory
+  tags: set_x11vnc_pass
+
+- name: Set x11vnc passwd
+  become: yes
+  become_user: pi
+  shell: x11vnc -storepasswd "raspberry" /home/pi/.vnc/passwd
+  tags: set_x11vnc_pass
