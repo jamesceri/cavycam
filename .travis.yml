@@ -1,0 +1,4 @@
+language: c
+apt:
+ - gcc-arm-linux-gnueabihf
+ 
