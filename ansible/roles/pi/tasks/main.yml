@@ -1,0 +1,9 @@
+---
+- include: pi_config.yml
+- include: disable_screensaver.yml
+- include: packages.yml
+- include: update_ntp.yml
+- include: x11vnc.yml
+- include: auto_start.yml
+- include: hostname.yml
+- include: code.yml

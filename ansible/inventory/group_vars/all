@@ -1,0 +1,7 @@
+host_config_root_path: "{{ inventory_dir }}/.."
+ansible_ssh_keys: "{{ host_config_root_path }}/ansible_ssh_keys"
+tasks_path: "{{ host_config_root_path }}/tasks"
+generic_templates_path: "{{ host_config_root_path }}/templates"
+scripts_path: "{{ host_config_root_path }}/scripts"
+private_vars_path: "{{ inventory_dir }}/group_vars/private"
+files_path: "{{ host_config_root_path }}/files"

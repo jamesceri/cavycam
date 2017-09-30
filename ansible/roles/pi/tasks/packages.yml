@@ -1,0 +1,19 @@
+---
+- name: Remove packages
+  apt: purge=yes name="{{ item }}" state=absent
+  with_items:
+    - libreoffice*
+    - wolfram-engine
+
+- name: Update and upgrade packages
+  apt: update_cache=yes upgrade=yes force=yes
+
+- name: Install packages
+  apt: name="{{ item }}" state=present update_cache=yes
+  with_items:
+    - x11vnc
+    - xautomation
+    - libnss3-tools
+    - ntp
+    - wiringpi
+  tags: pkgs
