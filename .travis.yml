@@ -11,8 +11,8 @@ matrix:
 
 before_script:
   - cd src
-  - sudo apt update -qq
-  - sudo apt install -y -qq git
+#  - sudo apt update -qq
+#  - sudo apt install -y -qq git
   - export BUILD_RELEASE_VERSION=`git describe --tags`
   - export BUILD_PACKAGE_NAME=helloworld-$BUILD_RELEASE_VERSION
   - export BUILD_PACKAGE_NAME_TGZ=$BUILD_PACKAGE_NAME.tgz
@@ -27,5 +27,5 @@ deploy:
   file: "${BUILD_PACKAGE_NAME_TGZ}"
   skip_cleanup: true
   on:
-    repo: jamesceri/travis_test
+    repo: jamesceri/cavycam
     tags: true
