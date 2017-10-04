@@ -93,7 +93,7 @@ function build_app() {
         exit -1
     fi
 
-    file helloworld
+    file blinker
     popd
     tar -zcf $BUILD_PACKAGE_NAME.tgz $BUILD_PACKAGE_NAME
 }
