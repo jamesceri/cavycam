@@ -13,8 +13,9 @@ before_script:
   - cd src
   - sudo apt update -qq
   - sudo apt install -y -qq git
+  - export APPLICATION_NAME=`cat appname.txt`
   - export BUILD_RELEASE_VERSION=`git describe --tags`
-  - export BUILD_PACKAGE_NAME=blinker-$BUILD_RELEASE_VERSION
+  - export BUILD_PACKAGE_NAME=$APPLICATION_NAME-$BUILD_RELEASE_VERSION
   - export BUILD_PACKAGE_NAME_TGZ=$BUILD_PACKAGE_NAME.tgz
 
 script:
